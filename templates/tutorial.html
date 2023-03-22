@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <div class="container justify-content-center">
+                <div class="navbar-nav text-center">
+                    <div><a class="nav-item nav-link text-light" id="index" href="/">Instagram Follower Tracker</a></div>
+                    <a class="nav-item nav-link text-light" id="about" href="/about">About</a>
+                    <a class="nav-item nav-link text-light" id="tutorial" href="/tutorial">Tutorial</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br><br>
+    <!--Tutorial Main Section-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                    <h1>Tutorial: How To Use</h1>
+                    <hr>
+                    <ol class="list-unstyled">
+                        <li><strong>Step 1:</strong> Login to the Instagram account that you want to check with.</li>
+                        <li><strong>Step 2:</strong> Request data download in the "Privacy and security" tab in Settings.</li>
+                        <li><strong>Step 3:</strong> Request in JSON format, and wait to recieve data through the email that you've entered.</li>
+                        <li><strong>Step 4:</strong> Download the file from the email sent to you by Instagram, and extract all folders from that zip file.</li>
+                        <li><strong>Step 5:</strong> On the Instagram Follower Tracker page. Choose the followers and following file from the extracted folder named "followers_and_following".</li>
+                        <li><strong>Step 6:</strong> Click the "Submit" button.</li>
+                        <li><strong>Step 7:</strong> Review the results.</li>
+                    </ol>
+                    <p>This tutorial applies for both PC and mobile.</p>
+                <p><strong>Note:</strong> Instagram should be opened on a website as you cannot request your data on the mobile application.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--Footer Section-->
+    <footer class="fixed-bottom bg-dark">
+        <div class="container text-center text-light">
+            <small class=>Designed By Johnson Le</small>
+        </div>
+    </footer>
+
+</body>
+</html>
