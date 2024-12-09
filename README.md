@@ -4,7 +4,7 @@ The Instagram tracker tool allows users to check their Instagram account followi
 
 Access the **FREE** tool here: http://johnsondotle.pythonanywhere.com/
 
-![Preview](https://user-images.githubusercontent.com/75176300/226799022-8e312775-02d5-40ba-a687-4d48137d86ed.png)
+![Preview](https://github.com/user-attachments/assets/32e6b135-ddc7-48b5-98c4-f68772b5106f)
 
 # Content Used:
 - Python (Flask)
