@@ -12,21 +12,108 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffc107 !important;
+        }
+        
+        .navbar-brand:hover {
+            color: #fff  !important;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            box-shadow: inset 0 0 0 0;
+        }
+        
+        .nav-link {
+            font-weight: bold;
+            color: #ffc107 !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            box-shadow: inset 0 0 0 0;
+        }
+
+        .container-fluid {
+            background-color: #1c1b1b;
+            border-radius: 8px;
+            padding: 30px;
+        }
+
+        h1 {
+            font-weight: bold;
+            color: #ffc107;
+        }
+
+        .card {
+            background-color: #1c1b1b;
+            border: 1px solid #333;
+        }
+
+        .card-header {
+            background-color: #333;
+            color: #ffc107;
+        }
+
+        .list-group-item {
+            background-color: #1c1b1b;
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
+
+        .list-group-item:hover {
+            background-color: #333;
+        }
+
+        .btn-primary {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        .btn-primary:hover {
+            background-color: #e0a800;
+            border-color: #e0a800;
+        }
+
+        footer {
+            background-color: #1c1b1b;
+            padding: 10px 0;
+            color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            font-weight: bold;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <!--Nav bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-              <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1c1b1b;">
+        <a class="navbar-brand" href="/" style="color: #ffc107;">Instagram Follower Tracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="container justify-content-center">
-                <div class="navbar-nav text-center">
-                    <div><a class="nav-item nav-link text-light" id="index" href="/">Instagram Follower Tracker</a></div>
-                    <a class="nav-item nav-link text-light" id="about" href="/about">About</a>
-                    <a class="nav-item nav-link text-light" id="tutorial" href="/tutorial">Tutorial</a>
-                </div>
-            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tutorial">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <br><br>
@@ -57,11 +144,22 @@
         </div>
     </div>
 <!--Footer Section-->
-    <footer class="fixed-bottom bg-dark">
-        <div class="container text-center text-light">
-            <small class=>Designed By Johnson Le</small>
-        </div>
-    </footer>
+<footer class="fixed-bottom" style="background-color: #1c1b1b;">
+    <div class="container d-flex justify-content-center align-items-center">
+        <p style="color:#ffc107; margin: 0;">Designed By Johnson Le</p>
+    </div>
+    <div class="container d-flex justify-content-center mt-2">
+        <a href="https://www.linkedin.com/in/johnson-le-05679a1a2/" target="_blank" style="color: #0077b5; margin-right: 15px;">
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/johnsondotle" target="_blank" style="color: #fff; margin-right: 15px;">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/johnson.le/" target="_blank" style="color: #c13584; margin-right: 15px;">
+            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+        </a>
+    </div>
+</footer>
 
 </body>
 </html>

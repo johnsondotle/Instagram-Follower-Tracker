@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,74 +11,204 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #ffc107;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffc107 !important;
+        }
+        
+        .navbar-brand:hover {
+            color: #fff  !important;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            box-shadow: inset 0 0 0 0;
+        }
+        
+        .nav-link {
+            font-weight: bold;
+            color: #ffc107 !important;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            color: #fff !important;
+            transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+            box-shadow: inset 0 0 0 0;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #e0e0e0;
+        }
+
+        .custom-file-label::after {
+            content: "Browse";
+        }
+
+        .custom-file-label {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+
+        .custom-file-input {
+            background-color: #333;
+            color: #e0e0e0;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        footer {
+            background-color: #1c1b1b;
+            padding: 10px 0;
+            color: #e0e0e0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .flash-message-container {
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            margin-bottom: 0;
+        }
+
+        .form-container {
+            margin-top: 30px;
+            margin-bottom: 120px
+        }
+        
+        .footer-icons a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-icons a:hover {
+            color: #ffc107;
+        }
+        
+        @media (max-width: 576px) {
+            .footer-icons a {
+                margin: 0 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!--Nav bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-              <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1c1b1b;">
+        <a class="navbar-brand" href="/" >Instagram Follower Tracker</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbar">
-            <div class="container justify-content-center">
-                <div class="navbar-nav text-center">
-                    <div><a class="nav-item nav-link text-light" id="index" href="/">Instagram Follower Tracker</a></div>
-                    <a class="nav-item nav-link text-light" id="about" href="/about">About</a>
-                    <a class="nav-item nav-link text-light" id="tutorial" href="/tutorial">Tutorial</a>
-                </div>
-            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tutorial">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
         </div>
     </nav>
     <!--Alert boxes-->
-    {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in messages %} {% if category == 'error' %}
-    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+    <div class="container flash-message-container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ 'danger' if category == 'error' else 'success' }} alert-dismissible fade show" role="alert">
         {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-    </div>
-    {% else %}
-    <div class="alert alert-success alter-dismissable fade show" role="alert">
-        {{ message }}
-        <button type="button" class="close" data-dismiss="alert">
-            <span aria-hidden="true">&times;</span>
-          </button>
-    </div>
-    {% endif %} {% endfor %} {% endif %} {% endwith %}
-    <br><br>
-    <!--Main Section-->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Instagram Follower Tracker</h1>
-                <hr>
-                <form method="POST" enctype="multipart/form-data">
-                    <form method="POST" , enctype="multipart/form-data">
-                        {{form.hidden_tag()}}
-                        <div class="form-group">
-                            <div class="custom-file">
-                                <label for="file">Select Followers File:</label>
-                                <input type="file" class="form-control-file" id="file" name="file">
-                            </div>
-                            <br><br>
-                            <div class="custom-file">
-                                <label for="file2">Select Following File:</label>
-                                <input type="file" class="form-control-file" id="file2" name="file2">
-                            </div>
-                            <br><br>
-                            <div>{{form.submit(class="btn btn-primary")}}</div>
-                        </div>
-                    </form>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
+        </div>
+      
+        <!-- File Upload Form -->
+        <div class="container form-container">
+          <div class="row justify-content-center">
+              <div class="col-md-6">
+                  <h1 class="text-center">Upload Your Instagram Files</h1>
+                  <hr>
+                  <form method="POST" action="/" enctype="multipart/form-data">
+                      {{ form.hidden_tag() }}
+                      <div class="form-group">
+                          <label for="file">Select Followers File (followers_1.json):</label>
+                          <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="file" name="file" required>
+                              <label class="custom-file-label" for="file">Choose file...</label>
+                          </div>
+                      </div>
+      
+                      <div class="form-group">
+                          <label for="file2">Select Following File (following.json):</label>
+                          <div class="custom-file">
+                              <input type="file" class="custom-file-input" id="file2" name="file2" required>
+                              <label class="custom-file-label" for="file2">Choose file...</label>
+                            <div>{{ form.submit(class="btn btn-primary btn-block mt-3") }}</div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <br></br>
 <!--Footer Section-->
-    <footer class="fixed-bottom bg-dark">
-        <div class="container text-center text-light">
-            <small class=>Designed By Johnson Le</small>
-        </div>
-    </footer>
+<footer class="fixed-bottom" style="background-color: #1c1b1b;">
+    <div class="container d-flex justify-content-center align-items-center">
+        <p style="color:#ffc107; margin: 0;">Designed By Johnson Le</p>
+    </div>
+    <div class="container d-flex justify-content-center mt-2">
+        <a href="https://www.linkedin.com/in/johnson-le-05679a1a2/" target="_blank" style="color: #0077b5; margin-right: 15px;">
+            <i class="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/johnsondotle" target="_blank" style="color: #fff; margin-right: 15px;">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.instagram.com/johnson.le/" target="_blank" style="color: #c13584; margin-right: 15px;">
+            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+        </a>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+    // Display the name of the file uploaded
+    $('.custom-file-input').on('change', function(event) {
+        var inputFile = event.currentTarget;
+        $(inputFile).parent().find('.custom-file-label').html(inputFile.files[0].name);
+    });
+</script>
 
 </body>
-</html>
