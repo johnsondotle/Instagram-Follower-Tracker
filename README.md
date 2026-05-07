@@ -17,3 +17,7 @@ Please note that using this tool may be against Instagram's terms of service. Th
 
 # Feedback/Support:
 Please contact via email: johnsondotle@gmail.com
+
+
+# Update As Of 05/06/26:
+Outdated and retired program.
